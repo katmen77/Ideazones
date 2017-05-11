@@ -1,0 +1,18 @@
+<ion-view hide-nav-bar="true" ng-controller="SortCtrl">
+  <ion-content  scroll="true" overflow-scroll="false" >
+
+
+
+    <div class="list" style="margin-top:10%">
+
+
+        <ion-radio style="color: #FFFFFF;;" ng-repeat="item in sort" ng-value="item.value" ng-model="data.sort" ng-change="new(item.value)">
+          {{ item.text }}
+        </ion-radio>
+
+
+      </div>
+
+  </ion-content>
+
+</ion-view>

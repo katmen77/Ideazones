@@ -1,0 +1,80 @@
+[
+  {
+    "userid": 1,
+    "username":"Knox Hart",
+    "email":"123@123.com",
+    "about":"I have lived in Sydney for all my life, i am happy to meet someone not from Sydney",
+    "image":"img/adam.jpg",
+    "degree":12,
+    "university":"USYD",
+    "city":"Sydney",
+    "work":"kitchenhand",
+    "linkedin":"linkin1",
+    "teamid": 1
+    },
+      {
+    "userid": 2,
+    "username":"Weizhi Feng",
+    "email":"456@gmail.com",
+    "about":"I am from China and this is my first semester, happy to meet everyone",
+    "image":"img/ben.png",
+    "degree":16,
+    "university":"UOW",
+    "city":"Wollongong",
+    "work":"customer servie",
+    "linkedin":"linkin2",
+    "teamid": 2
+    },
+      {
+    "userid": 3,
+    "username":"William Ung",
+    "email":"789@gmail.com",
+    "about":"Melbourne is my favourite city, I hope everyone can enjoy",
+    "image":"img/max.png",
+    "degree":13,
+    "university":"University of Melbourne",
+    "city":"Boxhill",
+    "work":"Realestate",
+    "linkedin":"linkin3",
+    "teamid": 2
+    },
+      {
+    "userid": 4,
+    "username":"SIYAO(Nora) FU",
+    "email":"099@gmail.com",
+    "about":"nora is actually my favourite character of the world, that is why I chose this as my name",
+    "image":"img/mike.png",
+    "degree":10,
+    "university":"University of Adelaide",
+    "city":"Port Lincon",
+    "work":"Fisher",
+    "linkedin":"linkin4",
+    "teamid": 1
+    },
+      {
+    "userid": 5,
+    "username":"Hang Bai",
+    "email":"100@gmail.com",
+    "about":"I am from Singapore, althoug I look like I am from China. However, I have a lot of Chinese Friend",
+    "image":"img/pawan.png",
+    "degree":10,
+    "university":"University of Adelaide",
+    "city":"Port dogalas",
+    "work":"Driver",
+    "linkedin":"linkin5",
+    "teamid": 1
+    },
+      {
+    "userid": 6,
+    "username":"Chloe Davison",
+    "email":"999@gmail.com",
+    "about":"My brother Jason Davison is a handsomeman, we always hand out",
+    "image":"img/perry.png",
+    "gradyear":12,
+    "university":"UTS",
+    "city":"Sydney",
+    "work":"intern",
+    "linkedin":"linkin6",
+    "teamid": 1
+    }
+]

@@ -1,0 +1,81 @@
+<ion-view title="Ideas" hide-nav-bar="true">
+
+
+
+                  <div class="bar bar-header item-input-inset"  style="background-color: #39b54a; height: 75px">
+
+    <a nav-direction="enter" class="button button-outline icon ion-ios-search icon-right" href="#/tab/ideasearch" id="sbar" style="width:100%;border-radius:15px;color:#FFFFFF;border: solid;border-color: #FFFFFF;
+    border-width: 1px"></a>
+      </div>
+
+
+
+
+
+
+       <div  class=" button-bar " style="background-color: #39b54a; ">
+            <button id="margin0" ng-click="myideas()" class=" button button-positive button-small button-block" ng-class="class1">Me</button>
+            <button id="margin0" ng-click="teamideas()" class=" button button-positive button-small button-block" ng-class="class2">Team</button>
+            <button id="margin0" ng-click="favourites()" class=" button button-positive button-small button-block" ng-class="class3">Favourite</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <ion-content class="has-tabs has-header has-subheader" scroll="true" overflow-scroll="false" >
+
+
+
+
+
+
+
+
+
+
+    <!--<ion-refresher on-refresh="refresh()">-->
+    <!--</ion-refresher>-->
+    <ion-list>
+      <ion-item class="item-thumbnail-left item-text-wrap"
+                ng-repeat="idea in myIdeasList | filter: {author:author1} | orderBy: 'created_date':true">
+
+
+                <!--href="#/tab/ideas/{{idea.ideaNo}}"-->
+
+
+        <img class="pic" ng-src={{idea.image}} alt="no image" ng-click="link(idea.ideaNo)">
+
+
+
+        <h2 ng-click="link(idea.ideaNo)">{{idea.title| limitTo:20}}
+          {{idea.title.length > 50 ? '&hellip;' : ''}}</h2>
+        <h4 ng-click="link(idea.ideaNo)">{{idea.created_date}}</h4>
+
+
+
+                    <div class="button-bar">
+              <a class="button button-dark button-outline button-small icon-right"
+                 ng-class="isliked(idea)" ng-click="like(idea)">{{idea.likes.length}}
+              </a>
+              <a class="button button-dark button-outline button-small icon-right"
+                 ng-class="isfavoured(idea)"
+                 ng-click="favour(idea)">{{idea.favours.length}}
+              </a>
+              <a class="button button-dark button-outline button-small icon-right ion-ios-chatboxes"
+                 href="#/tab/ideas/{{idea.ideaNo}}">{{idea.comments.length}}</a>
+            </div>
+
+
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+{
+  "name": "proxy-example",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://localhost:3000/login"
+    }
+  ]
+}

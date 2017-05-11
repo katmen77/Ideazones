@@ -1,0 +1,52 @@
+<ion-view title="Ideas" hide-nav-bar="true" hide-tabs>
+
+
+
+
+  <ion-content class="has-tabs" scroll="true" overflow-scroll="false" style="height: 100%">
+
+
+        <div class="bar bar-header item-input-inset" style="background-color: transparent;" id="searchtop1">
+        <button class="button ion-arrow-left-a button-positive" style="top:4px; margin:0px" ng-click="back()"></button>
+        <label class="item-input-wrapper" style="height:90%; margin-top:4px">
+
+        <input type="search" placeholder="Search" autofocus ng-model="search.username" ng-change="title()" ng-model-options="{debounce : 800}">
+          <i class="icon ion-ios-search icon-right placeholder-icon"></i>
+        </label>
+      </div>
+
+
+
+    <ion-list ng-hide="!search.username">
+      <ion-item class="item item-man-left item-text-wrap"
+                ng-repeat="user in users | filter:search"
+                nav-direction="enter"
+                href="#/tab/home/profile/{{user.userid}}">
+        <img class="pic" ng-src={{user.image}} alt="no image">
+        <h2>{{user.username| limitTo:20}}</h2>
+
+      </ion-item>
+    </ion-list>
+
+
+<!--ng-click="detail(idea)"-->
+
+
+    <!--<ion-list ng-hide="!search.$">-->
+    <ion-list ng-hide="!search1.title">
+      <ion-item class="item-thumbnail-left item-text-wrap"
+                ng-repeat="idea in posts | filter:search1"
+                nav-direction="enter"
+                href="#/tab/home/ideas/{{idea.ideaNo}}">
+        <img class="pic" ng-src={{idea.image}} alt="no image">
+        <h2>{{idea.title| limitTo:20}}
+          {{idea.title.length > 50 ? '&hellip;' : ''}}</h2>
+        <h2>{{idea.created_date}}</h2>
+
+      </ion-item>
+    </ion-list>
+
+
+
+  </ion-content>
+</ion-view>

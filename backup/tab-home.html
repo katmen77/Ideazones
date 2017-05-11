@@ -1,0 +1,75 @@
+<ion-view view-title="Chats">
+  <ion-content padding="false" class=" manual-remove-top-padding has-header" scroll="false">
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+
+          <div class="list card">
+
+  <div class="item item-body">
+      <img ng-src="{{chat.face}}" width="300" height="auto" style="display: block; margin-left: auto; margin-right: auto;"z>
+      <h2>{{chat.id}}</h2>
+      <p>{{chat.name}}</p>
+      <p>{{chat.lastText}}</p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+      <div class=" button-bar ">
+          <button class=" button button-positive  button-block ">Like</button>
+          <button class=" button button-positive  button-block ">Favourite</button>
+          <button class=" button button-positive  button-block ">Comment</button>
+          </div>
+  </div>
+
+</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
+
+<ion-view title="Home" hide-nav-bar="true" id="page6" class=" ">
+    <ion-content padding="false" class=" manual-remove-top-padding has-header">
+
+        <form class="list ">
+            <button ng-click="navigate()" class=" button button-light  button-block icon-left ion-android-search " onsubmit=""></button>
+        </form>
+
+            <form id="ideas1-form8" class="list ">
+                <label class="item item-select " id="ideas1-select1" name="selChallenges">
+                    <span class="input-label">Challenges</span>
+                    <select>
+                        <option>Insurance</option>
+                        <option>IT</option>
+                        <option>Law</option>
+                    </select>
+                </label>
+                <label class="item item-select " id="ideas1-select2" name="Filter">
+                    <span class="input-label">Sort By</span>
+                    <select>
+                        <option>Newest</option>
+                        <option>Trending</option>
+                        <option>Popular</option>
+                    </select>
+                </label>
+                <div class="spacer" style="width: 283px; height: 15px;"></div>
+            </form>
+        <div class="item item-body">
+      <img ng-src="{{chat.face}}" width="300" height="auto" style="display: block; margin-left: auto; margin-right: auto;"z>
+      <h2>{{chat.id}}</h2>
+      <p>{{chat.name}}</p>
+      <p>{{chat.lastText}}</p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+      <div class=" button-bar ">
+          <button class=" button button-positive  button-block ">Like</button>
+          <button class=" button button-positive  button-block ">Favourite</button>
+          <button class=" button button-positive  button-block ">Comment</button>
+          </div>
+  </div>
+
+
+    </ion-content>
+</ion-view>

@@ -1,0 +1,43 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive"  ng-class="{'tabs-item-hide' : hideTabs}" >
+
+
+
+    <!-- Home Tab -->
+  <ion-tab title="Home" icon="ion-ios-home" href="#/tab/home">
+    <ion-nav-view name="tab-home"></ion-nav-view>
+  </ion-tab>
+
+    <!-- ideas Tab -->
+    <ion-tab title="Ideas" icon="ion-android-bulb" href="#/tab/ideas">
+        <ion-nav-view name="tab-ideas"></ion-nav-view>
+    </ion-tab>
+
+  <!-- newidea Tab -->
+  <ion-tab title="New Idea" icon="ion-ios-compose-outline" href="#/newidea">
+    <ion-nav-view name="tab-newidea"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- notification Tab -->
+
+    <!--<ion-tab title="Notifications" icon="ion-ios-people" href="#/tab/notify">-->
+        <!--<ion-nav-view name="tab-notify"></ion-nav-view>-->
+    <!--</ion-tab>-->
+
+
+  <!-- Setting Tab -->
+  <ion-tab title="Settings" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/settings">
+    <ion-nav-view name="tab-settings" animation="slide-in-up"></ion-nav-view>
+  </ion-tab>
+
+
+
+
+
+
+</ion-tabs>

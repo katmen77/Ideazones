@@ -1,0 +1,75 @@
+
+
+
+<ion-view title="Home" hide-nav-bar="true" id="page6" class=" ">
+    <ion-content padding="false" class=" manual-remove-top-padding has-header" ng-controller="HomeCtrl">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="">
+            </label>
+        <div class="item item-body">
+                        <form id="ideas1-form8" class="list ">
+                <label class="item item-select " id="ideas1-select1" name="selChallenges">
+                    <span class="input-label">Challenges</span>
+                    <select>
+                        <option>Insurance</option>
+                        <option>IT</option>
+                        <option>Law</option>
+                    </select>
+                </label>
+                <label class="item item-select " id="ideas1-select2" name="Filter">
+                    <span class="input-label">Sort By</span>
+                    <select>
+                        <option>Newest</option>
+                        <option>Trending</option>
+                        <option>Popular</option>
+                    </select>
+                </label>
+                <div class="spacer" style="width: 283px; height: 15px;"></div>
+            </form>
+
+
+
+            <swipe-cards on-card-swipe="onSwipe($event)">
+        <swipe-card on-card-swipe="cardSwiped()" id="start-card">
+          Swipe down for random idea
+          <i class="fa fa-smile-o" style="font-size: 3em;"></i>
+        </swipe-card>
+
+
+        <!-- TODO:Change card display to show likes in order of votes -->
+        <swipe-card ng-repeat="card in cards |filter:{challenge_id:selectedChallenge}"
+                    on-destroy="cardDestroyed($index)"
+                    on-card-swipe="cardSwiped($index)">
+          <div ng-controller="HomeCtrl">
+            <div class="title">
+              <h3 style="text-align:center">{{card.title | limitTo:22}}
+                {{card.title.length   > 25 ? '&hellip;' : '' }}</h3>
+            </div>
+            <div class="image">
+              <a href="#/app/exploreIdeas/{{card.ideaNo}}"><img ng-src="{{card.image}}" class="transparent"></a>
+            </div>
+
+            <div class="padding-left padding-right padding-top">
+              <span> {{card.text | limitTo:37}}
+                {{card.text.length   > 100 ? '&hellip;' : ''}}
+                </span>
+            </div>
+            <div style="text-align: center">
+
+              <span class="badge badge-stable">{{card.likes}}</span>
+                            <div id="ideas-button-bar9" class=" button-bar ">
+                <button class=" button button-positive button-small button-block button-outline icon-right ion-thumbsup ">{{card.likes}}</button>
+                <button class=" button button-positive button-small button-block button-outline icon-right ion-ios-star-outline ">2</button>
+                <button class=" button button-positive button-small button-block button-outline icon-right ion-ios-chatboxes-outline ">32</button>
+            </div>
+
+            </div>
+          </div>
+        </swipe-card>
+      </swipe-cards>
+  </div>
+
+
+    </ion-content>
+</ion-view>

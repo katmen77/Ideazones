@@ -1,0 +1,83 @@
+<ion-view title="{{cuser.username}}" ng-controller="ProfileCtrl" hide-nav-bar="true">
+
+  <div class="bar bar-header">
+  <button class="button icon ion-arrow-left-a" ng-click="back()"></button>
+  <h1 class="title">{{cuser.username}}</h1>
+</div>
+
+
+  {{users}}
+
+
+
+    <ion-content padding="true" scroll="true" class="has-header">
+         <form class="list ">
+            <div class="row">
+              <div class="col"></div>
+              <div class="col"><img src={{cuser.image}} width="100px" height="100px" style="display: block; margin-left: auto; margin-right: auto;"></div>
+              <div class="col"><a style="position: absolute; margin-top: 13%;"  class="button button-positive button-small button-block button-outline">edit</a></div>
+            </div>
+        </form>
+
+
+      <ion-list>
+        <div class="row">
+        <ion-radio style="width: 50%; border-left: none;" ng-model="choice" ng-value="false">About</ion-radio>
+        <ion-radio style="width: 50%; border-right: none;" ng-model="choice" ng-value="true">Team</ion-radio>
+          </div>
+      </ion-list>
+      <div class="list" ng-show="choice">
+
+        <a class="item item-avatar" ng-repeat="user in team" href="#/tab/settings/profile/team/{{user.userid}}">
+          <img src={{user.image}}>
+          <h2>{{user.username}}</h2>
+          <p>{{user.about}}</p>
+        </a>
+
+      </div>
+
+
+      <div class="row"  ng-show="!choice">
+        <div class="col-80">
+
+             <div class="list">
+  <label class="item item-input" >
+    <span class="input-label">{{cuser.about}}</span>
+
+  </label>
+    <label class="item item-input">
+    <span class="input-label">{{cuser.email}}</span>
+  </label>
+
+     <label class="item item-input">
+    <span class="input-label">{{cuser.university}}</span>
+
+  </label>
+     <label class="item item-input">
+    <span class="input-label">{{cuser.degree}}</span>
+
+  </label>
+     <label class="item item-input">
+    <span class="input-label">{{cuser.city}}</span>
+
+  </label>
+</div>
+        </div>
+
+
+
+
+
+        <div class="col" style="padding-top: 0px;">
+          <a href="#/pedit" style="margin-top: 0px; " class="button button-positive button-small button-block button-outline">edit</a>
+        </div>
+
+
+
+
+      </div>
+
+
+
+    </ion-content>
+</ion-view>

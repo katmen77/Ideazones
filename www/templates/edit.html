@@ -1,0 +1,194 @@
+<ion-view title="Editidea" hide-nav-bar="true">
+
+
+
+
+
+    <ion-content padding="true"  scroll="true">
+
+
+      <div class="row col" ng-hide="h1">
+
+      <form class="list" ng-submit="editidea()" >
+
+        <div class="col" style="padding-top: 15%">
+          <div>
+                <img ng-click="pickImage()" src="{{post.image}}" width="auto" height="200" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+
+          <label class="item item-input" style="margin-top: 5px">
+            <input type="text" placeholder="Title" ng-model="post.title"></label>
+          <label class="item item-input" style="margin-top: 5px" ng-click="open()" >
+            <div class="input-label" >
+              Challenge {{post.challenge_id}}</div>
+          </label>
+          <label class="item item-input item-stacked-label" style="padding: 0; margin-top: 5px">
+            <textarea maxlength="150" style="height:50px" type="text" placeholder="Summary" ng-model="post.summary"></textarea>
+          </label>
+            </label>
+            <label class="item item-input item-stacked-label" style="padding: 0; margin-top: 5px">
+            <textarea style="height:180px" type="text" placeholder="Description" ng-model="post.description"></textarea>
+          </label>
+
+           <div ng-hide = "!post.fileurl" class="item item-input item-stacked-label" style="padding: 0; margin-top: 5px">
+
+            <div  class="row" style="height:120px;margin-left: auto; margin-right: auto; text-align: center">
+
+              <!--<div class = "col" ><a style="text-align: center;" href="{{fileurl}}"><img style="height:80px" ng-src="img/filetypeicon/{{icon}}"><p>{{filename}}</p></a>-->
+              <!--</div>-->
+              <div class="col"></div>
+
+              <div class = "col" ><a style="text-align: center;" href="{{post.fileurl}}"><img style="height:80px" ng-src="img/filetypeicon/{{icon}}"><p>{{post.filename}}</p></a>
+              </div>
+              <div class="col" >
+
+
+                  <img ng-click="deletefile()"  style="width: 10%;
+    position: absolute;
+    right: 25%;" src="img/crossicon.png">
+
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+
+
+
+
+          <div class="row">
+            <div class="col">
+              <button type="submit" style="text-shadow: none" class="button button-block button-positive">
+                Publish
+              </button>
+              <a class="button button-block button-calm" style="background-color: #ef473a" ng-click="back()">
+                Cancel
+              </a>
+
+            </div>
+            <div class="col">
+
+
+
+
+
+
+
+
+
+
+
+
+            <a style="margin-top: 30%;" ng-click="pickFile()" class="button button-block button-royal">
+              Upload file
+
+          </a>
+
+
+
+
+          </div>
+
+
+            <!--<h2 class="button button-clear button-block button-small">-->
+            <!--</h2>-->
+            <!--<a  ng-click="pickFile()" class="button button-block button-large button-black ion-ios-upload">-->
+
+          <!--</a></div>-->
+          </div>
+
+          <a class="button button-block button-assertive" ng-click="delete()">
+            Delete Idea
+          </a>
+
+        </div>
+      </form>
+    </div>
+
+
+    <div class="list" ng-show="h1">
+
+
+
+      <a class="item item-button-right " ng-click = "open()">
+
+        Select Challenge
+
+        <button class="button">
+
+          <i class = "ion-close-circled" ></i>
+          </button>
+
+
+
+
+      </a>
+      <a class="item" ng-click="expand1()" ng-class="class1">
+        Challenge 1
+                <div class="card" ng-show="c1" >
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha1()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+      <a class="item" ng-click="expand2()" ng-class="class2">
+        Challenge 2
+                <div class="card" ng-show="c2">
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha2()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+      <a class="item" ng-click="expand3()" ng-class="class3">
+        Challenge 3
+        <div class="card" ng-show="c3">
+
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha3()" class="button button-royal">Select</button>
+            </div>
+          </div>
+          </div>
+      </a>
+      <a class="item" ng-click="expand4()" ng-class="class4">
+        Challenge 4
+                <div class="card" ng-show="c4" >
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha4()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+      <a class="item"  ng-click="expand5()" ng-class="class5">
+        Challenge 5
+                <div class="card" ng-show="c5">
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha5()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+
+
+
+</div>
+
+
+      </ion-list>
+
+
+    </ion-content>
+
+
+</ion-view>

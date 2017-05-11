@@ -1,0 +1,35 @@
+[
+  {
+    "ideaNo": 6,
+    "title":" Enhanced Apriori Algorithm Model in Course Suggestion System",
+    "image":"http://lorempixel.com/image_output/abstract-q-c-640-480-1.jpg",
+    "likes":12,
+    "isLiked":false,
+    "created_date":"2015/08/15",
+    "challenge_id":"3",
+    "challenge_name":"Challenge 3",
+    "text": "Association Rule Mining (ARM) includes one of the most popular algorithms called Apriori Algorithm (AA) in it. AA has some limitations and areas for improvement related to the execution time consumption. The extended AA has some improvements based on the existing algorithm AA. The main findings indicate that not much has been done in an educational data mining considering the volume of data that is observed. Therefore, it is intended to evaluate to what extent an ARM can be utilized in an educational data mining context. Specifically, this paper develops an extended AA mining algorithm and applies it to the higher education system, focusing on the student's course planning system. This project focuses on introducing AA and ARM, implementing the enhanced features of the AA in educational data, develop the course recommender model. Finally, it evaluates the enhanced algorithm compared to the existing AA to help build a course suggestion system for students."
+  },
+  {
+    "ideaNo": 7,
+    "title":"AngularJS 2, forward-moving technology",
+    "image":"http://lorempixel.com/image_output/city-q-c-640-480-7.jpg",
+    "likes":15,
+    "isLiked":true,
+    "created_date":"2015/07/20",
+    "challenge_id":"3",
+    "challenge_name":"Challenge 3",
+    "text": "Legacy browsers hinder progress and do absolutely nothing to improve our lives. We have to make hard decisions to embrace new and emerging technologies so that we get languages and tools that empower us to build better things for society as a whole. Technology solves problems. AngularJS 2.0 on the surface appears radical because it is entirely forward thinking. That should be applauded, not derided."
+  },
+  {
+    "ideaNo": 8,
+    "title":"Design from the Augmented Reality Perspective",
+    "image":"http://lorempixel.com/image_output/technics-q-c-640-480-9.jpg",
+    "likes":7,
+    "isLiked":false,
+    "created_date":"2014/10/02",
+    "challenge_id":"1",
+    "challenge_name":"Challenge 1",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur debitis illo laborum maxime officiis. Adipisci aspernatur atque aut consectetur consequuntur dolor dolorem, expedita fugit laudantium maxime nobis provident, qui unde?"
+  }
+]

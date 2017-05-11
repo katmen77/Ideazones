@@ -1,0 +1,62 @@
+<ion-view title="Ideazone" hide-nav-bar="true" hide-back-button="true" ng-controller="AuthCtrl" style="background-color:white;">
+    <ion-content padding="true" style="background: url(img/ivyBKCvxRs6FrfmelnJB_abstract-abstraction-textures-textures-background-bokeh-blue-bubble-bubbles-bulbs-balls-spray-bubbles-bokeh-textures-abstract-wallpapers-pattern-desktop-hd-wallpapers-hd-wallpapers-wallpaper-free-scre.jpg) no-repeat center;background-size:cover;"
+    scroll="false" class="has-header">
+
+        <form class="list ">
+            <div >
+                <img src="./img/idea_white.png" style="margin-top:10%; width: 80%;display: block; margin-left: auto; margin-right: auto;">
+            </div>
+        </form>
+
+
+
+
+        <form ng-submit="logIn()"  style="margin-top: 10%; align-self:center">
+
+
+          <div style="height: 30px; color:#FF3B30;text-align: center;font-size: large; font-weight: bold">{{ message }}</div>
+
+
+                <!--<span style="height: 30%;" class="row"></span>-->
+
+            <label class="item item-input " style="margin-left:auto; margin-right:auto;border-radius: 15px;margin-bottom: 5px;margin-top: 10px;width: 90%; align-items: center">
+                <!--<span class="input-label" align="center">Email</span>-->
+                <input type="text" style="text-align: center; font-size: large" placeholder="Email" ng-model="user.username"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" ng-change="fillin()">
+            </label>
+
+            <label class="item item-input" style="margin-left:auto; margin-right:auto; border-radius: 15px; width: 90%;">
+                <!--<span class="input-label">Password</span>-->
+                <input type="{{inputType}}" placeholder="Password" ng-model="user.password"
+                       style="text-align: center; font-size: large"
+
+
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" ng-change="fillin()">
+
+            </label>
+            <div class="spacer"></div>
+
+          <div class="row row-center" style=" margin-top: 20px; align-items: center">
+
+
+
+
+
+
+              <input type="checkbox" id="checkbox" ng-model="passwordCheckbox" style="margin-left:30%" ng-click="hideShowPassword()" />
+              <label for="checkbox" style="font-size: large;margin-left:3%; color: #404041;">Show password</label>
+
+
+
+
+
+
+          </div>
+          <div class="row" style="margin-top: 20px">
+            <button style="color:#404041;font-weight:bolder;width: 50%;margin-right: auto; margin-left: auto; border: solid;border-width: 1px; border-color: #404041; border-radius: 15px;" type="submit" class="button" ng-class="buttonclass">Log in</button>
+          </div>
+
+        </form>
+
+    </ion-content>
+</ion-view>

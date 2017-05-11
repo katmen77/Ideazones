@@ -1,0 +1,154 @@
+<ion-view hide-nav-bar="true" view-title="New Idea" >
+  <ion-content class="padding" ng-controller="NewCtrl" >
+
+    <div class="row col">
+
+
+
+    </div>
+
+    <div class="row col" ng-show="h1">
+
+      <form class="list" ng-submit="newidea()" style="    margin-top: 10%;">
+        <div class="col">
+          <a class="button button-block button-stable" ng-click="pickImage()" style="    border-radius: 0px; padding: 0">
+            <div ng-hide="img" style="width: 100%;height: 200px;border:solid;display: block; margin-left: auto; margin-right: auto;"><p style="    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+            ">upload image</p></div>
+            <img ng-show="img" ng-src="{{img}}" style="width: 100%;height: 200px;border:solid;display: block; margin-left: auto; margin-right: auto;">
+
+            </a>
+
+
+          <label style="margin-top: 5% padding: 2%" class="item item-input">
+            <input type="text" placeholder="Title" ng-model="title"></label>
+          <label class="item item-input" style="margin-top: 5px" ng-click="open()" >
+            <div class="input-label" style="color: #FFFFFF;">
+              {{cname}}</div>
+          </label>
+          <label class="item item-input item-stacked-label" style="margin-top: 5px">
+            <textarea style="height:50px" type="text" placeholder="Summary" ng-model="summary"></textarea>
+          </label>
+            </label>
+            <label class="item item-input item-stacked-label" style="margin-top: 5px">
+            <textarea style="height:180px" type="text" placeholder="Description" ng-model="desc"></textarea>
+          </label>
+          <div ng-hide = "!fileurl" class="item item-input item-stacked-label" style="padding: 0; margin-top: 5px">
+
+            <div  class="row" style="height:120px;margin-left: auto; margin-right: auto; text-align: center">
+
+              <!--<div class = "col" ><a style="text-align: center;" href="{{fileurl}}"><img style="height:80px" ng-src="img/filetypeicon/{{icon}}"><p>{{filename}}</p></a>-->
+              <!--</div>-->
+              <div class="col"></div>
+
+              <div class = "col" ><a style="text-align: center;" href="{{fileurl}}"><img style="height:80px" ng-src="img/filetypeicon/{{icon}}"><p>{{filename}}</p></a>
+              </div>
+              <div class="col" >
+
+
+                  <img ng-click="deletefile()"  style="width: 10%;
+    position: absolute;
+    right: 25%;" src="img/crossicon.png">
+
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="button button-block button-positive" style="text-shadow: none">
+                Publish
+              </button>
+              <a class="button button-block button-calm" style="background-color: #ef473a" ng-click="back()">
+                Cancel
+              </a>
+
+            </div>
+
+            <div class="col">
+
+
+
+            <a style="margin-top: 30%;" ng-click="pickFile()" class="button button-block button-royal">
+              Upload file
+
+          </a>
+
+          </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+
+    <div class="list" ng-hide="h1" style="color:#FFFFFF;padding-top: 10%">
+
+      <a class="item" ng-click="expand1()" ng-class="class1">
+        Challenge 1
+                <div class="card" ng-show="c1" >
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha1()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+      <a class="item" ng-click="expand2()" ng-class="class2">
+        Challenge 2
+                <div class="card" ng-show="c2">
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha2()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+      <a class="item" ng-click="expand3()" ng-class="class3">
+        Challenge 3
+        <div class="card" ng-show="c3">
+
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha3()" class="button button-royal">Select</button>
+            </div>
+          </div>
+          </div>
+      </a>
+      <a class="item" ng-click="expand4()" ng-class="class4">
+        Challenge 4
+                <div class="card" ng-show="c4" >
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha4()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+      <a class="item"  ng-click="expand5()" ng-class="class5">
+        Challenge 5
+                <div class="card" ng-show="c5">
+          <div class="item item-text-wrap">
+             This description for challene 3 goes here. The description for challenge1 goes here.
+            The description for chellenge 1 goes here
+            <div class="row col">
+              <button ng-click="cha5()" class="button button-royal">Select</button>
+            </div></div></div>
+      </a>
+
+
+
+</div>
+
+
+  </ion-content>
+</ion-view>

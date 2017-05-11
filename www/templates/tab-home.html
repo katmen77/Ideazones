@@ -1,0 +1,259 @@
+<ion-view title="Home" hide-nav-bar="true"  ng-controller="HomeCtrl">
+
+
+
+  <div class="bar bar-header item-input-inset" id="shrint1" ng-hide="check" style="background-color: #39b54a; ">
+
+    <a class="button ion-arrow-left-a button-positive button-large" style="min-height: 35px;width:auto; top: 4px"  ng-click="rexpand()"></a>
+                <a nav-direction="enter" class="button button-outline icon ion-ios-search icon-right" href="#/tab/search" style="    height: 60%;width:80%;border-radius:15px;color:#FFFFFF;border: solid;border-color: #FFFFFF;
+    border-width: 1px"></a>
+
+
+  </div>
+
+
+
+      <div class="bar bar-header item-input-inset" id="searchtop" ng-show="check" style="background-color: transparent;">
+
+
+      <a nav-direction="enter" class="button button-outline icon ion-ios-search icon-right" href="#/tab/search" style="top:-2px;width:100%;border-radius:15px;color:#FFFFFF;border: solid;border-color: #FFFFFF;
+    border-width: 1px"></a>
+
+    </div>
+
+
+
+
+
+  <ion-content padding="false" style="padding-left:0;" header-shrink scroll-event-interval="5">
+
+
+
+
+
+
+    <div class="list" style="margin-bottom: 0px;margin-left:3%; margin-right:3%; margin-top: 20%;" ng-show="check" >
+      <a class="button  button-small button-block button-calm" style="font-size: 15px;" href="#/tab/sortby">{{sort1}}</a>
+      <a class="button  button-small button-block button-calm" style="font-size: 15px;" href="#/tab/challenge">{{sort2}}</a>
+
+
+      <!--<a class="button button-small button-block" ng-click="comment()">Text</a>-->
+
+    </div>
+
+
+
+
+
+    <div class="swiper-container" ng-show="check" style="margin-top: 5%;height: auto;margin-bottom: 5%">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="post in posts  | filter: {challenge_id: filter1} ">
+
+
+    <!--<ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">-->
+      <!--<ion-slide ng-repeat='post in posts | filter: {challenge_id: filter1} '>-->
+        <div class="list card" style="margin-top: 10px; height:100%; width: 100%" >
+
+
+            <div class="item item-body" style="padding: 0px;">
+              <img style="width: 100%; height: 130px" src="{{post.image}}">
+              <h3 style="margin: 3px;  height: 28px" ng-click="expand()">{{post.title}}</h3>
+              <p style="font-size: small; margin: 3px">By <a href="#/tab/home/profile/{{post.author}}">{{sname(post.author)}}</a></p>
+            </div>
+            <div class="item item-body" style="height: 100px; padding: 3px" ng-click="expand()">
+              <h3 style="margin: 3px">{{post.summary}}</h3>
+            </div>
+
+          <div class="item item-divider" style="padding: 0px;">
+            <div class="button-bar bar-positive">
+              <a class="button button-small icon-right custom-icon"
+                 ng-class="isliked(post)" ng-click="like(post)">{{post.likes.length}}
+              </a>
+              <a class="button button-small icon-right"
+                 ng-class="isfavoured(post)"
+                 ng-click="favour(post)">{{post.favours.length}}
+              </a>
+              <a class="button button-small icon-right ion-ios-chatboxes"
+                 ng-click="aexpand()">{{post.comments.length}}</a>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="swiper-container1" ng-hide="check"  >
+      <div class="swiper-wrapper" style="top:60px">
+        <div class="swiper-slide" ng-repeat="post in posts  | filter: {challenge_id: filter1} ">
+
+
+
+
+        <div class="row col" >
+          <div class="list">
+            <div class="col">
+              <div>
+                <img src="{{post.image}}" width="auto" height="200" style="display: block; margin-left: auto; margin-right: auto;">
+              </div>
+              <div class="row" style="margin: 0px;">
+                <div class="col" style="margin: 0px;">
+                  <h5 style="margin: 0px">{{post.title}}</h5>
+                  <p style="font-size: small; margin: 3px">By <a href="#/tab/home/profile/{{post.author}}">{{sname(post.author)}}</a></p>
+                </div>
+
+              </div>
+            </div>
+
+
+              <span style="margin-left: 5%; margin-right: 5%" class="input-label">Summary</span>
+              <p style="margin-left: 5%; margin-right: 5%">{{post.summary}}</p>
+
+            <span class="input-label" style="margin-left: 5%; margin-right: 5%">Description</span>
+            <p style="margin-left:5%; margin-right:5%">{{post.description}}</p>
+
+
+
+            <div ng-show = "post.filename" class="row" style="height:120px;margin-left: auto; margin-right: auto; text-align: center">
+
+              <div class = "col" ><a style="text-align: center;" href="{{post.fileurl}}"><img style="height:80px" src="{{fileicon(post.filename)}}"><p>{{post.filename}}</p></a>
+              </div>
+
+
+
+          </div>
+
+          <div class="button-bar bar-positive">
+              <a class="button button-small icon-right"
+                 ng-class="isliked(post)" ng-click="like(post)">{{post.likes.length}}
+              </a>
+              <a class="button button-small icon-right"
+                 ng-class="isfavoured(post)"
+                 ng-click="favour(post)">{{post.favours.length}}
+              </a>
+              <a class="button button-small icon-right ion-ios-chatboxes"
+                 ng-click="cexpand()">{{post.comments.length}}</a>
+            </div>
+
+          <ion-item  ng-repeat="comment in post.comments" class="item item-avatar" ng-hide="!check2">
+        <img src="{{image(comment.userid)}}">
+        <div class="row">
+          <div class="col">
+            <h2><a href="#/tab/home/profile/{{comment.userid}}">{{sname(comment.userid)}}</a></h2>
+          </div>
+          <div class="col"><a class="button button-small button-black" ng-click="replyid(comment)">
+            Reply
+          </a>
+          </div>
+        </div>
+        <p>{{comment.text}}</p>
+        <p>{{comment.date}}</p>
+        <ion-list>
+          <ion-item ng-repeat="reply in comment.replys" class="item item-avatar">
+
+            <img src="{{image(reply.userid)}}" style="width: 50px; height: 50px">
+            <h2><a href="#/tab/home/profile/{{reply.userid}}">{{sname(reply.userid)}}</a></h2>
+            <p>{{reply.text}}</p>
+            <p>{{reply.date}}</p>
+          </ion-item>
+          <div id="anchor1"></div>
+
+    </ion-list>
+  </ion-item>
+
+
+
+
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+                      <div style="background-color: transparent;height: 100px"></div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+    </ion-content>
+
+
+
+
+
+       <div class="bar bar-footer " style="background-color: #22abd5">
+
+
+
+    <form class="item item-input-inset"ng-show="check3" style="width:100%" ng-submit="addComment()">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Comment" ng-model="newcomment">
+      </label>
+      <button class="button button-small" type="submit">
+        Submit
+      </button>
+    </form>
+
+
+
+                 <form class="item item-input-inset" ng-hide="check4" style="width:100%" ng-submit="addreply()">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Reply" ng-model="newreply">
+      </label>
+      <button class="button button-small" type="submit">
+        Submit
+      </button>
+    </form>
+
+
+
+  </div>
+
+
+<!-- 
+           <div class="bar bar-footer "  style="bottom:-35px; id="shrint2">
+
+    <form class="item item-input-inset"ng-show="check3" style="width:100%" ng-submit="addComment()">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Comment" ng-model="newcomment">
+      </label>
+      <button class="button button-small" type="submit">
+        Submit
+      </button>
+    </form>
+
+
+
+                 <form class="item item-input-inset" ng-hide="check4" style="width:100%" ng-submit="addreply()">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Reply" ng-model="newreply">
+      </label>
+      <button class="button button-small" type="submit">
+        Submit
+      </button>
+    </form>
+
+  </div>
+
+ -->
+
+
+
+
+
+
+
+
+</ion-view>
+
+

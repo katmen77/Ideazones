@@ -1,0 +1,63 @@
+<ion-view title="User1" hide-nav-bar="true" ng-controller="PeditCtrl">
+
+
+
+    <div class="bar bar-header">
+    <button class="button ion-arrow-left-a button-positive" style="width:auto" ng-click="back()"></button>
+  <h1 class="title">{{cuser.username}}</h1>
+</div>
+
+
+
+    <ion-content padding="true"  class="">
+         <form class="list " style="margin-top: 20%">
+            <div class="row">
+              <div class="col"></div>
+              <div class="col"><img src={{cuser.image}} width="100px" height="100px" style="display: block; margin-left: auto; margin-right: auto;"></div>
+             <div class="col"><a ng-click="imagechange()" style="position: absolute; margin-top: 13%; margin-left: 4%;" class="button button-positive button-small button-block button-outline">Edit Image</a></div>
+            </div>
+        </form>
+
+      <form class="list list-inset" id="myform" ng-submit="editprofile()">
+
+          <textarea type="text" placeholder="About me" ng-model="cuser.about" style="    background-color: transparent;
+    width: 100%;
+    border: solid;
+    border-width: 1px;
+    border-color: #86c4b5;
+    padding: 2%;
+    height: 100px;"></textarea>
+
+          <label class="item item-input">
+          <input type="text" placeholder="University" ng-model="cuser.university">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Degree" ng-model="cuser.degree">
+        </label>
+          <label class="item item-input">
+          <input type="text" placeholder="City" ng-model="cuser.city">
+        </label>
+
+      </form>
+
+
+            <div class="bar" style="position: absolute; bottom: 0">
+             <!--<div class="button-bar bar-positive">-->
+        <div class="row">
+          <div class="col">
+          <button class="button button-balanced button-block" style="border-radius: 8px;" type="submit" form="myform">Save Changes</button>
+            </div>
+          <div class="col">
+
+          <a class="button button-assertive button-block" style="background-color: #EF473A ;border-radius: 8px;" ng-click="back()">Cancel</a>
+        </div>
+        </div>
+
+
+      </div>
+    </ion-content>
+
+
+
+
+</ion-view>
